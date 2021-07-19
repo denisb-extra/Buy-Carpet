@@ -1,0 +1,136 @@
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
+
+@mixin f-l {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
+}
+
+@mixin f-r {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+}
+
+@mixin f-m {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+}
+
+@mixin f-b {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+}
+
+@mixin f-bl {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 900;
+}
+
+@font-face { 
+	font-family: 'bedas-regular'; 
+	src: url('../fonts/BebasNeue-Regular.ttf') format('truetype'); 
+} 
+@mixin f-bedas-r {
+  font-family: 'bedas-regular';
+  font-weight: normal;
+}
+
+@font-face { 
+	font-family: 'lucida-regular'; 
+	src: url('../fonts/LucidaGrande.ttf') format('truetype'); 
+} 
+@mixin f-lucida-r {
+  font-family: 'lucida-regular';
+  font-weight: normal;
+}
+/* /Fonts */
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+	padding-top: 130px;
+
+	@media only screen and (max-width : $mw) {
+		padding-top: 45px;
+	}
+	
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: rtl;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+@import 'parts';
+@import 'index';
+@import 'inner';
+@import 'templates';
+@import 'woo';

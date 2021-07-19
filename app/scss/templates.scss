@@ -1,0 +1,273 @@
+.like {
+	font-size: 22px;
+	width: 50px;
+	height: 50px;
+	@include flex-center;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border-radius: 100%;
+
+	.wpulike {
+		padding: 0px;
+		width: 50px;
+		height: 50px;
+
+		.count-box, .wp_ulike_likers_wrapper {
+			display: none !important;
+		}
+
+		.wp_ulike_general_class {
+			width: 100%;
+			height: 100%;
+
+			.wp_ulike_btn {
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+				background-color: rgba(0,0,0,0.08);
+				cursor: pointer;
+				padding: 0;
+				
+				&:after {
+					height: 24px;
+					width: 24px;
+				}
+	
+			}
+		}
+	}
+}
+
+.box-product {
+	margin: 0;
+	
+	display: block;
+	position: relative;
+	max-width: 342px;
+
+	&.cat-42, &.cat-28 {
+		.part-top .image img {
+			max-height: 100%;
+		}
+	}
+
+	.inner {
+		position: relative;
+		height: 100%;
+		border: 1px solid #F1F1F6;
+		background: #F6F7F9;
+	}
+
+	.new, .sale {
+		@include f-b;
+		font-size: 17px;
+		color: #fff;
+		position: absolute;
+		top: -16px;
+		right: 25px;
+		width: 67px;
+        height: 67px;
+        border-radius: 100%;
+        @include flex-center;
+		z-index: 9;
+
+	}
+
+	.sale {
+		background: #E20714;
+	}
+	.new {
+		background: #283582;
+	}
+	.part-top {
+		position: relative;
+		.image {
+			height: 205px;
+			width: 100%;
+			overflow: hidden;
+			border-bottom: 1px solid #F1F1F6;
+			@include flex-center;
+			align-items: flex-end;
+			position: relative;
+			img {
+				transition: 0.5s;
+				max-width: 100%;
+			}
+			.hover {
+				position: absolute;
+				@include flex-center;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0;
+				transition: 0.5s;
+				background: #fff;
+				img {
+					max-height: 100%;
+					transform: none !important;
+				}
+			}
+		}
+	}
+
+
+	.part-bottom {
+		padding: 15px;
+		padding-bottom: 60px;
+        background: #F6F7F9;
+		.title {
+			@include f-m;
+			font-size: 17px;
+			color: #222447;
+            text-align: center;
+		}
+
+		.price {
+			@include f-m;
+			font-size: 21px;
+			color: #E20714;
+			margin-top: 15px;
+			text-align: center;
+	
+			ins {
+				@include f-b;
+				text-decoration: none;
+			}
+			del {
+				margin-left: 5px;
+				@include f-r;
+				font-size: 15px;
+				color: #4B4B4B;
+
+			}
+		}
+
+		.buttons {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+		}
+		.button {
+			@include f-m;
+			font-size: 17px;
+			color: #fff;
+			background: #23232C;
+			padding: 10px;
+			flex: 1 1 0px;
+			text-align: center;
+			transition: 0.5s;
+			white-space: nowrap;
+			&:hover {
+                background: #E20714;
+            }
+            img, span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            img {
+                margin-left: 10px;
+                transition: 0.5s;
+            }
+
+			&.add-to-cart {
+				color: #222447;
+			    background: #E8EAED;
+				&:hover {
+                    background: #E20714;
+                    color: #fff;
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+			}
+		}
+	}
+
+	&:hover {
+		.part-top {
+			.image {
+				img {
+					transform: scale(1.1);
+				}
+				.hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $lw) {
+		.new, .sale {
+			font-size: 15px;
+			top: -16px;
+			right: 20px;
+			width: 55px;
+			height: 55px;
+		}
+
+		.part-top {
+			.image {
+				height: 200px;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $tw) {
+		.part-bottom {
+			.price {
+				font-size: 18px;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.new, .sale {
+			font-size: 14px;
+			top: -16px;
+			right: 10px;
+			width: 50px;
+			height: 50px;
+		}
+
+		.part-top {
+			.image {
+				height: 150px;
+			}
+		}
+		.part-bottom {
+			padding: 10px;
+			padding-bottom: 45px;
+			.price {
+				font-size: 16px;
+				del {
+					font-size: 14px;
+				}
+			}
+			.button {
+				padding: 8px 5px;
+				font-size: 13px;
+				img {
+					display: none;
+				}
+			}
+		}
+		.like {
+			width: 35px;
+			height: 35px;
+	
+		}
+
+		.wpulike {
+			width: 35px;
+			height: 35px;
+		}
+
+	}
+}
+
