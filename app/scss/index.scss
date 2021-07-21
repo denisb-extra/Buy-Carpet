@@ -368,7 +368,17 @@ header {
             padding: 0 10px;
             height: 45px;
             .text {
-                display: none;
+                //display: none;
+                position: absolute;
+                bottom: -27px;
+                height: 27px;
+                padding: 5px;
+                background: #e92b3a;
+                left: 0;
+                right: 0;
+                @include f-r;
+                font-size: 14px;
+                text-align: center;
             }
             .logo-mobile {
                 display: block;
